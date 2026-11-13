@@ -1,7 +1,268 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <meta charset="utf-8">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WedgeSecure Cloud Security Test</title>
-  <h1>WSC Security Test Fixtures</h1>
-  <p>Synthetic test content only.</p>
+
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --text: #243247;
+      --muted: #66758a;
+      --primary: #1768ad;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 28px 20px 48px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .hero {
+      background: #172b4d;
+      color: #fff;
+      padding: 36px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 29px;
+      margin: 0 0 8px;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #d4deea;
+      max-width: 560px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 0 0 6px;
+    }
+
+    .description {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 500px;
+    }
+
+    th, td {
+      padding: 13px 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .download {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .grid .card { margin-bottom: 0; }
+
+    .grid p { color: var(--muted); }
+
+    code {
+      background: #edf2f7;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 650px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 26px; }
+      .hero h1 { font-size: 24px; }
+      .card { padding: 18px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <header class="header">
+      <div class="brand">WSC Security Test</div>
+      <a href="https://github.com/wedgepsg/wsc-security-test"
+         target="_blank" rel="noopener noreferrer">
+        GitHub Repository
+      </a>
+    </header>
+
+    <section class="hero">
+      <h1>Security Test Fixtures</h1>
+      <p>
+        Synthetic test files and URLs for WedgeSecure Cloud
+        QA, regression, and customer POC validation.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>DLP &amp; Text Extraction</h2>
+      <p class="description">
+        Select a file to view or download.
+        Configure the corresponding security policy before testing.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Test Purpose</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="record.txt">record.txt</a></td>
+              <td>Keyword detection</td>
+              <td><a class="download" href="record.txt" download>Download</a></td>
+            </tr>
+            <tr>
+              <td><a href="payment.txt">payment.txt</a></td>
+              <td>Financial data detection</td>
+              <td><a class="download" href="payment.txt" download>Download</a></td>
+            </tr>
+            <tr>
+              <td><a href="neutral.txt">neutral.txt</a></td>
+              <td>Negative control</td>
+              <td><a class="download" href="neutral.txt" download>Download</a></td>
+            </tr>
+            <tr>
+              <td><a href="record.docx">record.docx</a></td>
+              <td>Word document extraction</td>
+              <td><a class="download" href="record.docx" download>Download</a></td>
+            </tr>
+            <tr>
+              <td><a href="record.pdf">record.pdf</a></td>
+              <td>PDF text extraction</td>
+              <td><a class="download" href="record.pdf" download>Download</a></td>
+            </tr>
+            <tr>
+              <td><a href="bundle.zip">bundle.zip</a></td>
+              <td>Archive extraction</td>
+              <td><a class="download" href="bundle.zip" download>Download</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>URL Filtering</h2>
+        <p>
+          Use distinct URLs to test URL-based blocking
+          and allow rules.
+        </p>
+        <p>
+          <a href="index.html">Homepage URL</a><br>
+          <a href="neutral.txt">Neutral file URL</a>
+        </p>
+        <p>
+          Configure the target URL in WedgeIQ and
+          verify the result in WedgeOS.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Testing Notes</h2>
+        <p>
+          All files contain synthetic test content.
+        </p>
+        <p>
+          Document and archive inspection may require
+          Text Extraction.
+        </p>
+        <p>
+          This is a static download site.
+          File uploads require a separate endpoint.
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      WedgeSecure Cloud · QA &amp; POC Test Resources<br>
+      Detection results depend on active security policies
+      and enabled inspection features.
+    </footer>
+
+  </main>
+</body>
 </html>
