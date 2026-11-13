@@ -1,0 +1,4 @@
+Synthetic payment-data test fixture.
+Visa test card number: 4242424242424242
+Mastercard test card number: 5555555555554444
+These numbers are for testing only; no real cardholder information is included.
